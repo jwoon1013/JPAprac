@@ -118,6 +118,9 @@ public class Restaurant implements ApplicationRunner {
             System.out.println("주문한 사람 = " + order.getMember().getMemberName());
         }
 
+         Member member = memberRepository.findByMemberName("삼식이").orElseThrow(()-> new RuntimeException("삼식이 없음"));
+        System.out.println("member.getMemberName() = " + member.getMemberName());
+        System.out.println("member.getId() = " + member.getId());
 
     }
 }
