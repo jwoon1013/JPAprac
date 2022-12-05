@@ -29,8 +29,7 @@ public class Orders {
         this.member = member;
     }
 
-    @OneToMany(mappedBy = "food", fetch = FetchType.EAGER) // 음식 1개에 주문이 여러개 될 수 있어서 OnetoMany를 사용.
-    private List<Orders> orders = new ArrayList<>();
+
 }
 
 // mappedBy : 연관관계의 주인을 지정해줌

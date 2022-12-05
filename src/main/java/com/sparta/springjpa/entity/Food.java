@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter // Getter 생성
 @Entity // Entity클래스임을 알림
 @NoArgsConstructor // 기본생성자 생성
@@ -20,4 +23,10 @@ public class Food {
         this.foodName = foodName;
         this.price = price;
     }
+
+    @OneToMany(mappedBy = "food", fetch = FetchType.EAGER)
+    private List<Orders> orders = new ArrayList<>();
+
 }
+
+
